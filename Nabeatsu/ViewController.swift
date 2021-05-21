@@ -20,13 +20,22 @@ class ViewController: UIViewController {
     }
     
     func isAho() -> Bool {
-        // 問題1: 3の倍数かどうか調べる
+        //3の倍数かどうか調べる
+        if number % 3 == 0 {
+            return true
+        }
         
-        // 問題2: 1の位が3かどうか調べる
+        //3がつくかどうか調べる
         
-        // 問題3: 10の位が3かどうか調べる
-
-        // 問題4: 3がつくかどうか調べる
+        var check: Int = number
+        
+        while check != 0 {
+            if check % 10 == 3 {
+                return true
+            } else {
+                check = check / 10
+            }
+        }
         // 問題4をやるときは問題3と問題2の答えを消してから書こう
 
         
@@ -43,6 +52,12 @@ class ViewController: UIViewController {
             
             faceLabel.text = "(゜o゜)"
         }
+    }
+    
+    @IBAction func clear(){
+        number = 0
+        countLabel.text = String(number)
+        faceLabel.text = "(゜o゜)"
     }
 
 
